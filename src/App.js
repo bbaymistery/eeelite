@@ -23,6 +23,7 @@ function App() {
           </h1>
 
           <Alert />
+          {/* <Route exact path="/" component={auth?.token ? Home : Login} /> */}
 
         </div>
       </Router>
