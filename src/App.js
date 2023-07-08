@@ -19,7 +19,7 @@ function App() {
         <input type="checkbox" id="theme" />
         <div className={`App `}>
           <h1 className="main">
-            Yakinda Hizmeyinizdeyiz
+            Yakinda Hizmeyinizdeyizdsada
           </h1>
 
           <Alert />
