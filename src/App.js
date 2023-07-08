@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router,  } from 'react-router-dom';
 import Alert from './components/Alert'
 import { useDispatch } from 'react-redux';
 function App() {
@@ -23,7 +23,6 @@ function App() {
           </h1>
 
           <Alert />
-          {/* <Route exact path="/" component={auth?.token ? Home : Login} /> */}
 
         </div>
       </Router>
