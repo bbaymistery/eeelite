@@ -3,6 +3,7 @@
 @import 'animations';
 @import 'utils';
 @import 'notifications';
+@import 'breakpoint';
 
 
 * {
@@ -49,6 +50,9 @@ body {
 
 
 
-.bg {
-    background-color: red !important;
+.container {
+    // width: 1256px;
+    margin: 0 auto;
+    max-width: 1256px;
+    width: 100%;
 }
