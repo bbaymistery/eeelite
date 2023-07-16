@@ -46,15 +46,12 @@ const Header = () => {
         </div>
 
         <div className="icons">
-          {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels","Unmatched Softness"].map((link) => {
+          {/* {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels", "Unmatched Softness"].map((link) => { */}
+            { ["Luxury Linens", "Premium Quality", "Hotel-Grade Towels",].map((link) => {
             return (
               <div key={link}   >
-                <span>
-                  <BiSolidCheckboxChecked />
-                </span>
-                <span>
-                  {link}
-                </span>
+                <span> <BiSolidCheckboxChecked />  </span>
+                <span> {link} </span>
               </div>
             );
           })}
