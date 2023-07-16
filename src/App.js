@@ -4,6 +4,7 @@ import Alert from './components/Alert'
 import { useDispatch } from 'react-redux';
 import './styles/global.scss';
 import Header from './components/Header/Header';
+import Slider from './components/Slider/Slider';
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Alert />
         <Header />
+        <Slider />
 
         <div className={"d"} style={{ height: "500px", background: "black", width: "100%", color: 'white', textTransform: 'capitalize', display: 'flex', alignItems: "center", justifyContent: 'center' }}>
 
