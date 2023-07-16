@@ -6,7 +6,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
-  const [cars, setCars] = useState(slideImages);
+  const [cars] = useState(slideImages);
 
   useEffect(() => {
     const lastIndex = cars.length - 1;
