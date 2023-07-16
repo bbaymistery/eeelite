@@ -112,7 +112,7 @@
                         letter-spacing: 2.5px;
 
                         @include breakpoint-down(medium) {
-                            font-size: 19px;
+                            font-size: 25px;
 
                         }
 
@@ -129,8 +129,7 @@
                         margin-top: 2rem;
 
                         @include breakpoint-down(medium) {
-                            font-size: 64px;
-
+                            font-size: 30px;
                         }
 
                         @include breakpoint-down(small) {
@@ -173,6 +172,14 @@
                         position: fixed;
                         bottom: 200px;
                         cursor: pointer;
+
+                        @include breakpoint-down(medium) {
+                            bottom: 100px;
+                        }
+
+                        @media(max-width:768px) {
+                            display: none;
+                        }
 
                         &_button {
                             background-color: rgb(0, 0, 0);
@@ -239,6 +246,10 @@
                 border-top-left-radius: 3px;
                 border-bottom-left-radius: 3px;
             }
+
+            @media(max-width:768px) {
+                display: none;
+            }
         }
 
 
@@ -258,7 +269,7 @@
 
             .slide_icon {
                 z-index: 999;
-                background-color: rgb(249, 58, 58);
+                background-color: rgb(0, 0, 0);
                 width: 20px;
                 height: 8px;
                 margin: 0 6px;
