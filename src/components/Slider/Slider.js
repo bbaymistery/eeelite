@@ -4,7 +4,6 @@ import "./Slider.scss";
 import { slideImages } from "../../constants/slideImages";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const Slider = () => {
   //https://www.youtube.com/watch?v=tphDji-XZCE
