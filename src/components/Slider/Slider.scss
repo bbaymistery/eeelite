@@ -1,0 +1,296 @@
+@import '../../styles/breakpoint';
+
+.slider_container {
+    height: 750px;
+    width: 100%;
+    // border: 1px solid red;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include breakpoint-down(medium) {
+        height: 650px;
+
+    }
+
+    @include breakpointMax(520px) {
+        height: 550px;
+
+    }
+
+
+
+    .slider {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        // margin: 20px;
+
+
+
+
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            img {
+                width: 100%;
+            }
+
+            .slide_img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                // object-fit: cover;
+                // display: none;
+
+            }
+
+            .container_auto_center {
+
+                max-width: 1452px;
+                margin: 0 auto;
+
+                @include breakpoint-down(small) {
+                    text-align: center;
+                }
+
+                &::after {
+                    background-color: rgba(0, 0, 0, 0.4);
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    content: '';
+                    z-index: 0;
+                }
+
+                .intro {
+                    position: absolute;
+                    // background-color: red;
+                    color: white;
+                    width: 45%;
+                    margin-top: 150px;
+                    margin-left: 50px;
+                    font-weight: bold;
+                    z-index: 999;
+
+                    @include breakpoint-down(medium) {
+                        margin-top: 180px;
+                        width: 65%;
+
+                    }
+
+                    @include breakpoint-down(small) {
+                        width: 80%;
+                    }
+
+                    @include breakpointMax(520px) {
+                        margin-top: 150px;
+
+
+                    }
+
+                    .intro_welcome {
+                        font-size: 24px;
+                        color: rgb(255, 255, 255);
+                        font-weight: 500;
+                        letter-spacing: 2.5px;
+
+                        @include breakpoint-down(medium) {
+                            font-size: 25px;
+
+                        }
+
+                        @include breakpoint-down(small) {
+                            font-size: 15px;
+
+                        }
+                    }
+
+
+                    .intro_header {
+                        font-size: 44px;
+                        color: rgb(239, 235, 235);
+                        margin-top: 2rem;
+
+                        @include breakpoint-down(medium) {
+                            font-size: 30px;
+                        }
+
+                        @include breakpoint-down(small) {
+                            font-size: 44px;
+                            color: rgb(255, 255, 255);
+
+                        }
+
+                        @include breakpointMax(520px) {
+                            font-size: 19px;
+
+                        }
+                    }
+
+                    .intro_desc {
+                        font-size: 24px;
+                        color: rgb(213, 212, 212);
+                        margin-bottom: 2rem;
+                        letter-spacing: 2.5px;
+                        margin-top: 2rem;
+                        font-weight: normal;
+
+                        @include breakpoint-down(medium) {
+                            font-size: 19px;
+
+                        }
+
+                        @include breakpoint-down(small) {
+                            font-size: 16px;
+                            margin: 2rem 0rem;
+
+                        }
+                    }
+
+                    .login_register {
+                        @include breakpoint-down(small) {}
+
+                        cursor: pointer;
+                        z-index: 0;
+                        position: fixed;
+                        bottom: 200px;
+                        cursor: pointer;
+
+                        @include breakpoint-down(medium) {
+                            bottom: 100px;
+                        }
+
+                        @media(max-width:768px) {
+                            display: none;
+                        }
+
+                        &_button {
+                            background-color: rgb(0, 0, 0);
+                            padding: 13px;
+                            color: white;
+                            border: none;
+                            cursor: pointer;
+                            letter-spacing: 2.5px;
+                            font-weight: normal;
+
+                            &:active {
+                                transform: scale(1.03);
+                            }
+
+                            @include breakpoint-down(small) {
+                                font-size: 11px;
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        .activeSlide {
+            opacity: 1 !important;
+            transform: translateX(0);
+
+        }
+
+        .navigation {
+            height: 500px;
+            display: flex;
+            position: relative;
+            top: 350px;
+            justify-content: space-between;
+            opacity: 0;
+
+            padding: 0px 2rem;
+
+            .prev_btn,
+            .next_btn {
+                z-index: 9999;
+                font-size: 2rem;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.76);
+                padding: 10px;
+                cursor: pointer;
+
+                @include breakpoint-down(small) {
+                    text-align: center;
+                    margin-top: 60px;
+                }
+            }
+
+            .prev_btn {
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+
+            .next_btn {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+            @media(max-width:768px) {
+                display: none;
+            }
+        }
+
+
+        &:hover {
+            .navigation {
+                opacity: 1;
+                transition: ease .5s;
+            }
+        }
+
+        .visibility_navigation {
+            z-index: 999;
+            display: flex;
+            justify-content: flex-end;
+            max-width: 1452px;
+            margin: 0 auto;
+
+            .slide_icon {
+                z-index: 999;
+                background-color: rgb(0, 0, 0);
+                width: 20px;
+                height: 8px;
+                margin: 0 6px;
+                // transform: translateY(500px);
+                // transform: translate(700px, 150px);
+                border-radius: 2px;
+                // box-shadow: 0 5px 25px rgb(1px, 1px, 1px);
+                margin-top: 100px;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.2);
+                    transition: .5s ease;
+                }
+            }
+
+            .activeNavigationSlider {
+                background-color: rgb(246, 246, 246) !important;
+                transform: scale(1.3) !important;
+            }
+        }
+
+    }
+}

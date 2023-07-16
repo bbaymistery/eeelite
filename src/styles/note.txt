@@ -1,0 +1,8 @@
+klaslar  altdanxet ile 
+colors lar ortadan xet ile yazlr
+
+
+$alert-warning: #856404;
+
+
+.alert_warning

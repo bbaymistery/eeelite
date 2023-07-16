@@ -1,0 +1,58 @@
+@import 'fonts';
+@import 'typography';
+@import 'animations';
+@import 'utils';
+@import 'notifications';
+@import 'breakpoint';
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+html,
+body {
+    color: $dark-1;
+    font-family: $font-jost;
+    --window-margin: 100px;
+    font-size: 16px;
+    line-height: 1.6em;
+    position: relative;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        --window-margin: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        --window-margin: 10px !important;
+    }
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+
+
+.container {
+    // width: 1256px;
+    margin: 0 auto;
+    max-width: 1256px;
+    width: 100%;
+}
