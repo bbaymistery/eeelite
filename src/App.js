@@ -4,9 +4,7 @@ import Alert from './components/Alert'
 import { useDispatch } from 'react-redux';
 import './styles/global.scss';
 import Header from './components/Header/Header';
-import Slider from './components/Slider/Slider';
 import PageRender from './customRouter/PageRender'
-import NotFound from './components/NotFound';
 import Home from './pages/home';
 import Footer from './components/Footer';
 function App() {
