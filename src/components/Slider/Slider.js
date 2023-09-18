@@ -8,27 +8,44 @@ const Slider = () => {
   const [cars] = useState(slideImages);
   const [typewriterText, setTypewriterText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
-  const phrase = "Your Comfort, Our Craft";
-
   useEffect(() => {
-    let timeout;
+    const lastIndex = cars.length - 1;
 
-    if (charIndex < phrase.length) {
-      timeout = setTimeout(() => {
+    // Ensure the index stays within the valid range
+    if (index < 0) setIndex(lastIndex);
+    if (index > lastIndex) setIndex(0);
+
+    // Auto slide functionality
+    let slider = setInterval(() => {
+      setIndex((oldIndex) => {
+        let newIndex = oldIndex + 1;
+        if (newIndex > lastIndex) newIndex = 0;
+        return newIndex;
+      });
+    }, 5000);
+
+    // Cleanup the interval when the component is unmounted
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index, cars]);
+
+  const phrase = "Your Comfort, Our Craft";
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      // If it's not at the end of the phrase, continue typing
+      if (charIndex < phrase.length) {
         setTypewriterText((prev) => prev + phrase[charIndex]);
         setCharIndex((prev) => prev + 1);
-      }, 200); // Adjust the typing speed if necessary
-    } else {
-      timeout = setTimeout(() => {
+      } else {
+        // If it's at the end of the phrase, reset to start typing again
         setTypewriterText("");
         setCharIndex(0);
-      }, 2000);  // 2 seconds pause before retyping
-    }
+      }
+    }, 200);  // Adjust the typing speed if necessary
 
     return () => clearTimeout(timeout);
   }, [typewriterText, charIndex]);
-
-
   return (
     <div className="slider_container">
       <div className="slider sliderrr">
@@ -58,12 +75,7 @@ const Slider = () => {
                   </p>
                   <div className="login_register">
                     <a href="/products">
-                      <button
-                        className="typewriter-text login_register_button"
-                        style={{ display: typewriterText.length === 0 ? 'none' : 'block' }}
-                      >
-                        {typewriterText}
-                      </button>
+                      <button className="typewriter-text login_register_button" >{typewriterText}</button>
                     </a>
                   </div>
                 </div>
