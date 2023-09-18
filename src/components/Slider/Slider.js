@@ -3,32 +3,31 @@ import "./Slider.scss";
 
 import { slideImages } from "../../constants/slideImages";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-
 const Slider = () => {
   const [index, setIndex] = useState(0);
   const [cars] = useState(slideImages);
+  const [typewriterText, setTypewriterText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  const phrase = "Your Comfort, Our Craft";
 
   useEffect(() => {
-    const lastIndex = cars.length - 1;
+    let timeout;
 
-    // Ensure the index stays within the valid range
-    if (index < 0) setIndex(lastIndex);
-    if (index > lastIndex) setIndex(0);
+    if (charIndex < phrase.length) {
+      timeout = setTimeout(() => {
+        setTypewriterText((prev) => prev + phrase[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 200); // Adjust the typing speed if necessary
+    } else {
+      timeout = setTimeout(() => {
+        setTypewriterText("");
+        setCharIndex(0);
+      }, 2000);  // 2 seconds pause before retyping
+    }
 
-    // Auto slide functionality
-    let slider = setInterval(() => {
-      setIndex((oldIndex) => {
-        let newIndex = oldIndex + 1;
-        if (newIndex > lastIndex) newIndex = 0;
-        return newIndex;
-      });
-    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [typewriterText, charIndex]);
 
-    // Cleanup the interval when the component is unmounted
-    return () => {
-      clearInterval(slider);
-    };
-  }, [index, cars]);
 
   return (
     <div className="slider_container">
@@ -59,7 +58,12 @@ const Slider = () => {
                   </p>
                   <div className="login_register">
                     <a href="/products">
-                      <button className="login_register_button">Explore Our Collection</button>
+                      <button
+                        className="typewriter-text login_register_button"
+                        style={{ display: typewriterText.length === 0 ? 'none' : 'block' }}
+                      >
+                        {typewriterText}
+                      </button>
                     </a>
                   </div>
                 </div>

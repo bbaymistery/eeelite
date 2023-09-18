@@ -16,22 +16,22 @@ const generatePage = (pageName) => {
 
 const PageRender = () => {
     const { page, id } = useParams()
-    const { auth } = useSelector(state => state)
 
     let pageName = "";
     //token statementini yazmasag  bu sehfeye gede bilerik http://localhost:3000/discover
     ///tokeni yazarakk gedisi engelliyirik
     //yani sadece login olanlar gede bilir
     //Bunu bura ekledikden sonra App js e register ucun ilave route ekledik
-    if (auth.token) {
-        if (id) {
-            pageName = `${page}/[id]`
-        } else {
-            pageName = `${page}`
-        }
+    if (id) {
+        pageName = `${page}/[id]`
+    } else {
+        pageName = `${page}`
     }
 
+
+ 
     return generatePage(pageName)
+
 }
 
 export default PageRender
