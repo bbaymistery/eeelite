@@ -18,14 +18,11 @@ export const headerLinks = [
     name: "Contact us",
     link: "/contactus",
   },
-  // {
-  //   name: "Catalog",
-  //   link: "katalog.pdf"
-  // }
+ 
 ];
 
 const Header = () => {
-
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const changeValues = (linkName) => {
 
@@ -53,7 +50,25 @@ const Header = () => {
             </div >
           </ul>
         </div>
-
+        {/* Mobile Menu */}
+        <div className={`mobile_menu ${mobileMenuOpen ? "open" : ""}`}>
+          <ul>
+            {headerLinks.map((link) => {
+              return (
+                <li key={link.name}>
+                  <Link to={link.link} onClick={() => changeValues(link.name)}>
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <a href="/katalog.pdf" target='_blank' rel='noreferrer'>
+                Our Catalog
+              </a>
+            </li>
+          </ul>
+        </div>
         <div className="icons">
           {/* {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels", "Unmatched Softness"].map((link) => { */}
           {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels",].map((link) => {
@@ -65,7 +80,7 @@ const Header = () => {
             );
           })}
         </div>
-        <div className="hamburger_menu">
+        <div className="hamburger_menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <GiHamburgerMenu className="icon" style={{ cursor: "pointer" }} />
         </div>
       </div>
