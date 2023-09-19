@@ -25,16 +25,27 @@ const ContactUs = () => {
             </a>
 
 
-            <img  src={elgunVisitcard} alt="Director - Elgun's Visit Card" />
+            <img src={elgunVisitcard} alt="Director - Elgun's Visit Card" />
           </div>
           <div >
             <a href="https://wa.me/994773054363?text=Interested%20in%20Working%20Together%3F" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <img  src={ElidaVisitcard} alt="Sales Manager - Elida's Visit Card" />
+            <img src={ElidaVisitcard} alt="Sales Manager - Elida's Visit Card" />
+          </div>
+
+          <div className='contact_us_catalog_div_mobile'>
+            <a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>Check out our Catalog
+
+            </a>
           </div>
         </div>
 
+        <div className='contact_us_catalog_div'>
+          <a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>Check out our Catalog
+
+          </a>
+     </div>
         <div>
         </div>
 

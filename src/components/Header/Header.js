@@ -18,6 +18,10 @@ export const headerLinks = [
     name: "Contact us",
     link: "/contactus",
   },
+  // {
+  //   name: "Catalog",
+  //   link: "katalog.pdf"
+  // }
 ];
 
 const Header = () => {
@@ -42,12 +46,17 @@ const Header = () => {
                 </Link>
               );
             })}
+            <div className='contact_us_catalog_div_mobile'>
+              <a a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank' >Our Catalog
+
+              </a >
+            </div >
           </ul>
         </div>
 
         <div className="icons">
           {/* {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels", "Unmatched Softness"].map((link) => { */}
-            { ["Luxury Linens", "Premium Quality", "Hotel-Grade Towels",].map((link) => {
+          {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels",].map((link) => {
             return (
               <div key={link}   >
                 <span> <BiSolidCheckboxChecked />  </span>

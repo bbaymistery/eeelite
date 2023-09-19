@@ -4,14 +4,35 @@
     min-height: 550px;
 
     .container {
+        .contact_us_catalog_div {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 2rem;
+            padding-right: 5.2rem;
+
+            .contact_us_katalog_tag {
+                color: rgb(0, 0, 0);
+                font-weight: 500;
+                font-size: 20px;
+                text-decoration: underline;
+                cursor: pointer;
+
+                @media(max-width:1100px) {
+                    display: none;
+                }
+            }
+        }
+
+
 
         .contact_us_title {
             font-weight: bold;
             text-align: center;
             margin-top: 2rem;
+
             @media(max-width:768px) {
-                 font-size: 20px;
-                }
+                font-size: 20px;
+            }
         }
 
         .contact_us_title_description {
@@ -54,7 +75,23 @@
                     width: 450px;
 
                     @media(max-width:768px) {
-                       width: 350px;
+                        width: 350px;
+                    }
+                }
+            }
+
+            .contact_us_catalog_div_mobile {
+                display: none;
+
+                @media(max-width:1100px) {
+                    display: block;
+                    color: rgb(0, 0, 0);
+                    font-weight: 500;
+                    font-size: 20px;
+                    text-decoration: underline;
+
+                    a {
+                        cursor: pointer;
                     }
                 }
             }

@@ -72,6 +72,8 @@ const Slider = () => {
                   <p className="intro_desc">
                     Elevate your lifestyle with our exclusive selection of high-quality products,
                     meticulously curated to provide you with unmatched comfort and satisfaction.
+    
+         
                   </p>
                   <div className="login_register">
                     <a href="/products">
