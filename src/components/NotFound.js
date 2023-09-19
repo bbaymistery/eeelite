@@ -9,8 +9,8 @@ const NotFound = () => {
                 left: '0px',
                 right: '0px',
                 background: 'black',
-                position: 'fixed',
-                zIndex: "99999",
+                position: 'absolute',
+                zIndex: "9999999",
                 display: 'flex'
                 , justifyContent: 'center',
                 alignItems: 'center', flexDirection: 'column'

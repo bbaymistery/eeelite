@@ -27,7 +27,7 @@ const Footer = () => {
                 </p></div>
                 <div className="right_part_footer">
                     <p>
-                        E-Mail                 <i style={{ color: 'red' }} className={`fa-solid fa-x close_icon`}></i>
+                        E-Mail             
 
                     </p>
                     <a href="mailto:elidamahmudlu@gmail.com">elidamahmudlu@gmail.com</a>

@@ -20,13 +20,10 @@ function App() {
       <Router>
         <Alert />
         <Header />
-        <div className={`App `}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/:page" element={<PageRender />} />
           </Routes>
-        </div>
-
         <Footer />
       </Router>
     </div>

@@ -16,7 +16,7 @@ export const headerLinks = [
 
   {
     name: "Contact us",
-    link: "/products",
+    link: "/contactus",
   },
 ];
 
