@@ -1,0 +1,53 @@
+@import '../../styles/breakpoint';
+
+.product_carousel {
+    .title {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    .carousel_list {
+
+        .slider {
+            // height: auto;
+            // margin: auto;
+            position: relative;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            padding: 20px 0px;
+
+
+            .slider_track {
+                display: flex;
+                width: calc(250px*10);
+                animation: scroll 20s linear infinite;
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+
+
+                .slide {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 25px;
+                    perspective: 100px;
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(calc(-250px*5));
+    }
+}

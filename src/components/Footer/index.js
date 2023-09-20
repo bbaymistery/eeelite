@@ -19,7 +19,7 @@ const Footer = () => {
                     <p className='center_part_footer_title'>Have Questions</p>
                     <a href="tel:+994506330135">+994 50 633 0135</a>
                     <br />
-                    <a href="tel:+994773054363">+994 77 305 43635</a>
+                    <a href="tel:+994773054363">+994 77 305 4363</a>
                     <br />
                     <span>
                         24/7 Dedicated Customer Support

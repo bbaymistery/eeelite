@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import PageRender from './customRouter/PageRender'
 import Home from './pages/home';
 import Footer from './components/Footer';
+import ProductCarousel from './components/ProductsCarousel/ProductCarousel';
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -20,10 +21,11 @@ function App() {
       <Router>
         <Alert />
         <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:page" element={<PageRender />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:page" element={<PageRender />} />
+        </Routes>
+        <ProductCarousel />
         <Footer />
       </Router>
     </div>

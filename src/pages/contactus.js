@@ -1,7 +1,7 @@
 import React from 'react'
 import "./contactus.scss";
-import elgunVisitcard from '../images/elgunVisitCardEn.png';
-import ElidaVisitcard from '../images/elidaVisitcardTr.png';
+import elgunVisitcard from '../images/VisitCard/elgunVisitCardEN.png';
+import ElidaVisitcard from '../images/VisitCard/elidaVisitCardEN.png';
 const ContactUs = () => {
   return (
     <div className={"contact_us"}>
