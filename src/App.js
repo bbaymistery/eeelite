@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       dispatch({ type: "ALERT", payload: {} })
-    }, 1100);
+    },250);
   }, [dispatch])
 
   return (

@@ -89,9 +89,9 @@ const ProductCarousel = React.memo(() => {
 
   return (
     <div className="container product_carousel">
-      <h2 className="title" ref={headerTwoRef} data-aos="zoom-in">
+      <h3 className="title" ref={headerTwoRef} data-aos="zoom-in">
         {visible && "Some of our products"}
-      </h2>
+      </h3>
       <div className="carousel_list">
         <div className="slider">
           <div className="slider_track">

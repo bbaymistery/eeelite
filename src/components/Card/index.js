@@ -4,7 +4,7 @@ import "./card.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Card = React.memo(({ pr }) => {
-  useEffect(() => { AOS.init({ duration: 1200, easing: "ease-in-sine" }); }, []);
+  useEffect(() => { AOS.init({ duration: 1200, easing: "ease-in-sine",delay:100 }); }, []);
 
   return (
     <div  className="card" key={pr.id}>
