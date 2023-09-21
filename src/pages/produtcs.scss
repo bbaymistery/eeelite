@@ -1,0 +1,21 @@
+.products {
+    position: absolute;
+    left: 0px;
+    height: 90vh;
+    right: 0px;
+    background-color: black;
+    z-index: 99999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    flex-direction: column;
+
+    span{
+        color: green;
+        font-weight: bold;
+    }
+
+}

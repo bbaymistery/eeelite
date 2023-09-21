@@ -24,10 +24,15 @@ const Footer = () => {
                     <span>
                         24/7 Dedicated Customer Support
                     </span>
+                    <br />
+                    <p className={"copy__desc"}>
+                        Copyright © 2023 EE Elite
+                        <i className={`fa-solid fa-heart ${"icon"}`}></i>
+                    </p>
                 </p></div>
                 <div className="right_part_footer">
                     <p>
-                        E-Mail             
+                        E-Mail
 
                     </p>
                     <a href="mailto:elidamahmudlu@gmail.com">elidamahmudlu@gmail.com</a>
@@ -37,6 +42,17 @@ const Footer = () => {
                 </div>
 
             </div>
+
+            {/* <div className="container">
+
+                <div className={"sub_container"}>
+                    <p className={"copy__desc"}>
+                        Copyright © 2023 EE Elite
+                        <i className={`fa-solid fa-heart ${"icon"}`}></i>
+                    </p>
+
+                </div>
+            </div> */}
         </div>
     )
 }

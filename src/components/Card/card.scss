@@ -4,7 +4,6 @@
     border: 1px solid var(--border-gray);
     border-radius: 20px;
     min-height: 302px;
-    height: 302px;
     position: relative;
     transition: .5s ease-in-out;
     width: 244px;
@@ -37,7 +36,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+height: 340px;
         img {
             border-radius: 15px;
             object-fit: cover;
