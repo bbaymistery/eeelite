@@ -8,14 +8,20 @@ export const headerLinks = [
   {
     name: "Home",
     link: "/",
+
   },
+  {
+    name: "About",
+    link: "/aboutus",
+  },
+
   {
     name: "Products",
     link: "/products",
   },
 
   {
-    name: "Contact us",
+    name: "Contact ",
     link: "/contactus",
   },
  
@@ -45,8 +51,8 @@ const Header = () => {
                 );
               })}
               <div className='contact_us_catalog_div_mobile'>
-                <a a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank' >Our Catalog
-
+                <a  className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>
+                   Catalog
                 </a >
               </div >
             </ul>
@@ -65,7 +71,7 @@ const Header = () => {
               })}
               <li>
                 <a href="/katalog.pdf" target='_blank' rel='noreferrer'>
-                  Our Catalog
+                   Catalog
                 </a>
               </li>
             </ul>

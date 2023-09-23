@@ -1,0 +1,86 @@
+@import '../styles/breakpoint';
+@import '../styles/variables';
+@import '../styles/_fonts';
+
+.about {
+    margin: 0 var(--window-margin);
+    padding: 4rem 0rem;
+
+    .container {
+        h1 {
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: serif;
+        }
+
+        .info {
+            p {
+                font-size: 21px;
+                padding-bottom: 1rem;
+                        font-family: $font-sanspro;
+                span {
+                    font-weight: bold;
+                }
+                                        @media(max-width:1100px) {
+                                                        font-size:19px;
+                                        }
+                                                                                         @media(max-width:768px) {
+                                                                                             font-size: 16px;
+                                                                                             margin-bottom: 1rem;
+                                                                                             text-align: center;
+                                                                                         }
+            }
+        }
+
+        .politikamiz {
+            margin-top: 3rem;
+
+            .politikamiz_title {
+                font-size: 36px;
+                font-family: serif;
+                text-align: center;
+            }
+
+            .boxes {
+                display: flex;
+                gap: 2rem;
+                margin-top: 3rem;
+
+                @media(max-width:1100px) {
+                    flex-direction: column;
+                }
+
+                .box {
+                    border: 1px solid $border;
+                    padding: 2rem 1.5rem;
+
+                    &:hover {
+                        background-color: #d7d7d7;
+                        color: black;
+                        transition: .2s linear;
+
+                        .box_desc {
+                            font-weight: 500;
+                        }
+                    }
+
+                    .box_title {
+                        font-size: 20px;
+                        font-weight: 500;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                    }
+
+                    .box_desc {
+                        font-size: 18px;
+                        font-family: $font-sanspro;
+                        text-align: center;
+                        font-weight: 500;
+                        color: rgb(0, 0, 0);
+
+                    }
+                }
+            }
+        }
+    }
+}
