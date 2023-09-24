@@ -1,0 +1,113 @@
+        @import '../../styles/fonts';
+        @import '../../styles/variables';
+
+        .language_dropdown {
+            cursor: pointer;
+            position: relative;
+
+            .language_dropdown_top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $border;
+                padding: 2px 8px;
+
+                .language_dropdown_top_img_div {
+                    background-color: rgb(216 222 228 / 14%);
+                    padding: 0px 5px;
+display: flex;
+    justify-content: center;
+    align-items: center;
+                    img {
+                        width: 20px;
+                    }
+                }
+
+                span {
+                    margin-left: 10px;
+                    color: $dark-1;
+                    font-family: $font-jost;
+
+                    i {
+                        font-size: 11px;
+                        margin-left: 10px;
+                    }
+
+
+                }
+
+                .lang_text {
+                    @media(max-width:1200px) {
+                        display: none;
+                    }
+                }
+
+
+                .all_languages {
+                    position: absolute;
+                    background-color: white;
+                    top:45px;
+                    left: 0px;
+                    width: 100%;
+                    display: flex;
+                    width: 132PX;
+                    // box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    border-radius: 5px;
+                    height: auto;
+                    align-items: center;
+                    transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    display: grid;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    @media(max-width:1200px) {
+                        left: -242px;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: -5px;
+                        left: 20px;
+                        width: 10px;
+                        height: 10px;
+                        background-color: white;
+                        transform: rotate(45deg);
+
+                        @media(max-width:1200px) {
+                            left: 253px;
+                        }
+                    }
+
+                    .content {
+                        padding: 5px 10px;
+                        display: flex;
+
+                        .img_div {}
+
+                        span {
+                            margin-left: 10px;
+                            color: $dark-1;
+                            font-family: $font-jost;
+
+                            i {
+                                font-size: 11px;
+                                margin-left: 10px;
+                            }
+                        }
+
+
+                        &:hover {
+                            color: lighten($primary, 45%);
+                            background-color: rgba(53, 84, 209, 0.1);
+                            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                        }
+                    }
+
+
+                }
+            }
+
+
+        }

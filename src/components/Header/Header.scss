@@ -137,7 +137,7 @@
                         width: 610px;
                         justify-content: center;
                         gap: 1.5rem;
-    
+    align-items: center;
                         @include breakpoint-down(small) {
                             flex-direction: column;
                             margin-top: 2rem;

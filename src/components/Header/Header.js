@@ -4,6 +4,7 @@ import { BiSolidCheckboxChecked } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import LanguageSelector from "../LanguageSelector/Index";
 export const headerLinks = [
   {
     name: "Home",
@@ -24,7 +25,7 @@ export const headerLinks = [
     name: "Contact ",
     link: "/contactus",
   },
- 
+
 ];
 
 const Header = () => {
@@ -35,7 +36,7 @@ const Header = () => {
   };
 
   return (
-  <div className="wrapper_header">
+    <div className="wrapper_header">
       <div className="container">
         <div className="header">
           <Link to="/" className="logo">
@@ -51,10 +52,12 @@ const Header = () => {
                 );
               })}
               <div className='contact_us_catalog_div_mobile'>
-                <a  className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>
-                   Catalog
+                <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
+                  Catalog
                 </a >
               </div >
+              <LanguageSelector />
+
             </ul>
           </div>
           {/* Mobile Menu */}
@@ -70,8 +73,8 @@ const Header = () => {
                 );
               })}
               <li>
-                <a href="/katalogTr.pdf" target='_blank' rel='noreferrer'>
-                   Catalog
+                <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
+                  Catalog
                 </a>
               </li>
             </ul>
@@ -92,7 +95,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-  </div>
+    </div>
   );
 };
 
