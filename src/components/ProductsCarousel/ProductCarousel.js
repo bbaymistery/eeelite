@@ -17,77 +17,77 @@ import productIamge9 from '../../images/products/bornoz.jpg'
 import productIamge10 from '../../images/products/mehraba.jpg'
 const allProducts = [
   {
-    id: 1,
-    name: "Product A",
-    price: "100₼",
-    image: productIamge1,
-    altname: "Product A Image Description"
-  },
-  {
-    id: 2,
-    name: "Product B",
-    price: "120₼",
-    image: productIamge2,
-    altname: "Product B Image Description"
-  },
-  {
-    id: 3,
-    name: "Product C",
-    price: "80₼",
-    image: productIamge3 ,
-    altname: "Product C Image Description"
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: "150₼",
-    image: productIamge4,
-    altname: "Product D Image Description"
-  },
-  {
-    id: 5,
-    name: "Product E",
-    price: "130₼",
-    image: productIamge5,
-    altname: "Product E Image Description"
-  },
-  {
-    id: 6,
-    name: "Product F",
-    price: "110₼",
-    image: productIamge6,
-    altname: "Product F Image Description"
-  },
-  {
-    id: 7,
-    name: "Product G",
-    price: "90₼",
-    image: productIamge7,
-
-    altname: "Product G Image Description"
-  },
-  {
     id: 8,
     name: "Product H",
-    price: "140₼",
     image: productIamge8,
-    altname: "Product H Image Description"
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
   },
   {
     id: 9,
     name: "Product I",
-    price: "170₼",
     image: productIamge9,
-    altname: "Product I Image Description"
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
   },
   {
     id: 10,
     name: "Product J",
-    price: "160₼",
     image: productIamge10,
-    altname: "Product J Image Description"
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 1,
+    name: "Product A",
+    image: productIamge1,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 2,
+    name: "Product B",
+    image: productIamge2,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 3,
+    name: "Product C",
+    image: productIamge3,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 4,
+    name: "Product D",
+    image: productIamge4,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 5,
+    name: "Product E",
+    image: productIamge5,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 6,
+    name: "Product F",
+    image: productIamge6,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
+  },
+  {
+    id: 7,
+    name: "Product G",
+    image: productIamge7,
+    altname: "EE ELITE products",
+    description: " Premier textiles for hotels, spas, and more. Where quality meets comfort."
   },
 ];
+
 const ProductCarousel = React.memo(() => {
 
   //!setting displaying with hook

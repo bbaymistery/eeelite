@@ -35,14 +35,14 @@ const ContactUs = () => {
           </div>
 
           <div className='contact_us_catalog_div_mobile'>
-            <a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>Check out our Catalog
+            <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>Check out our Catalog
 
             </a>
           </div>
         </div>
 
         <div className='contact_us_catalog_div'>
-          <a className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>Check out our Catalog
+          <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>Check out our Catalog
 
           </a>
      </div>

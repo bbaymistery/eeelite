@@ -16,7 +16,7 @@ const Products = () => {
             </div>
             <span>
 
-                <a href="/katalog.pdf" target='_blank' rel='noreferrer'>
+                <a href="/katalogTr.pdf" target='_blank' rel='noreferrer'>
                     Check our catalog
                 </a>
             </span>

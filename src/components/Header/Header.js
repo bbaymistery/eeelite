@@ -39,7 +39,7 @@ const Header = () => {
       <div className="container">
         <div className="header">
           <Link to="/" className="logo">
-            <img src={'/images/eeelite.png'} alt="" />
+            <img src={'/images/eeelite.png'} alt="EE ELITE logo" />
           </Link>
           <div className="list">
             <ul>
@@ -51,7 +51,7 @@ const Header = () => {
                 );
               })}
               <div className='contact_us_catalog_div_mobile'>
-                <a  className='contact_us_katalog_tag' href="/katalog.pdf" target='_blank'>
+                <a  className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>
                    Catalog
                 </a >
               </div >
@@ -70,7 +70,7 @@ const Header = () => {
                 );
               })}
               <li>
-                <a href="/katalog.pdf" target='_blank' rel='noreferrer'>
+                <a href="/katalogTr.pdf" target='_blank' rel='noreferrer'>
                    Catalog
                 </a>
               </li>

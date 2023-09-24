@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import PageRender from './customRouter/PageRender'
 import Home from './pages/home';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTop/ScrollToTop';
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <Alert />
         <Header />
+        <ScrollToTopButton />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:page" element={<PageRender />} />

@@ -136,8 +136,8 @@
                 margin-top: 2rem;
 
                 .icon {
-                    color: rgb(127, 152, 0);
-                    font-size: 15px;
+                    color: $green-2;
+                    font-size: 26px;
                     margin: 0px 5px;
                     animation-duration: 1000ms;
                     animation-timing-function: linear;
@@ -205,74 +205,17 @@
         }
     }
 
-    //     .container:nth-child(2) {
-    // display: flex;
-    // justify-content: center;
-    //         //!it is for copyright
-    //         .sub_container {
 
-    //             display: flex;
-    //             flex-direction: column;
-    //             justify-content: flex-end;
-    //             text-align: center;
-    //             margin-top: 2rem;
-
-
-    //                 .copy__desc {
-
-    //                     .icon {
-    //                         color: rgb(127, 152, 0);
-    //                         font-size: 15px;
-    //                         margin: 0px 5px;
-    //                         animation-duration: 1000ms;
-    //                         animation-timing-function: linear;
-    //                         animation-delay: 0s;
-    //                         animation-iteration-count: infinite;
-    //                         animation-direction: normal;
-    //                         animation-fill-mode: none;
-    //                         animation-play-state: running;
-    //                         animation-name: heart;
-    //                     }
-
-    //                     .link {
-    //                         color: #000;
-    //                     }
-    //                 }
-
-
-
-
-    //                 .copy_right {
-    //                     display: flex;
-    //                     align-items: center;
-    //                     justify-content: flex-end;
-
-    //                     @media (max-width:768px) {
-    //                         justify-content: center;
-    //                         margin-top: 1rem;
-
-
-    //                     }
-
-    //                     &_title {
-    //                         font-size: 15px;
-    //                         padding-right: 8px;
-    //                         color: #000;
-    //                         font-weight: 500;
-
-    //                     }
-    //                 }
-    //         }
-
-
-    //     }
 }
 
 @keyframes heart {
     0% {
-        transform: scale(.71);
+        transform: scale(.51);
     }
 
+    50% {
+        transform: scale(.71);
+    }
 
 
     100% {
