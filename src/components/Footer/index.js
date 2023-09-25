@@ -18,7 +18,7 @@ const Footer = () => {
                             lead the industry in comfort
                         </p>
                 </div>
-                <div className="center_part_footer"><p>
+                <div className="center_part_footer">
                     <h1 className='center_part_footer_title'>Why choice us?</h1>
                   
                     <div className="icons">
@@ -36,7 +36,7 @@ const Footer = () => {
                         Copyright © 2023 EE Elite
                         <i className={`fa-solid fa-heart ${"icon"}`}></i>
                     </p>
-                </p></div>
+                </div>
                 <div className="right_part_footer">
                     <h1>
                        Customer Support
@@ -50,17 +50,7 @@ const Footer = () => {
                 </div>
 
             </div>
-
-            {/* <div className="container">
-
-                <div className={"sub_container"}>
-                    <p className={"copy__desc"}>
-                        Copyright © 2023 EE Elite
-                        <i className={`fa-solid fa-heart ${"icon"}`}></i>
-                    </p>
-
-                </div>
-            </div> */}
+    
         </div>
     )
 }

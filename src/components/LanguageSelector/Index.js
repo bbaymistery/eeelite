@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import OutsideClickAlert from "../../hooks/OutsideClickAlert/index";
 import './languageSelector.scss';
 import englishImage from '../../images/languages/en.gif'
 import russianImage from '../../images/languages/ru.gif'
 import turkishImage from '../../images/languages/tr.gif'
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 const languagess = [
     {
         "innerText": "English",
@@ -27,18 +29,25 @@ const languagess = [
     }
 ]
 const LanguageSelector = () => {
+
+
     const languagesDivRef = useRef(null)
-    const [langFlag, setLangFlag] = useState("en")
-    const [langIndex, setLangIndex] = useState(0);
+    const [langFlag, setLangFlag] = useState(localStorage?.getItem("languageKey") || "en");
+    const [langIndex, setLangIndex] = useState(localStorage?.getItem("languageIndex") || 0);
+    const { i18n } = useTranslation(["navbar"]);
+
     const outsideClickDropDown = (e) => {
         languagesDivRef.current.style.opacity = 0
         languagesDivRef.current.style.visibility = 'hidden'
     }
     const handleLanguage = async (params = {}) => {
-        let {  key,  index } = params
+        let { key, index } = params
 
         setLangFlag(key)
         setLangIndex(index)
+        i18n.changeLanguage(key);
+        localStorage.setItem("languageKey", key);
+        localStorage.setItem("languageIndex", index);
         //make hidden language dropdown in mobile menu After clicking
         languagesDivRef.current.style.opacity = 0
         languagesDivRef.current.style.visibility = 'hidden'
@@ -67,28 +76,25 @@ const LanguageSelector = () => {
         const language = languagess.find(lang => lang.value === langFlag);
         return language ? language.image : null;  // or a default image if not found.
     };
-    /*
-      useEffect(() => {
-    if ((localStorage?.getItem("language"))) {
-      let langKey = JSON.parse(localStorage.getItem("language"))
-      appData?.languages.map((item, index) => {
-        let { value: key, } = item
-        if (langKey === key) {
-          setLangFlag(key)
-          setLangIndex(index)
+
+    useEffect(() => {
+        const langKeyFromStorage = localStorage.getItem("languageKey");
+        const langIndexFromStorage = localStorage.getItem("languageIndex");
+        if (langKeyFromStorage) {
+            setLangFlag(langKeyFromStorage)
+            i18next.changeLanguage(langKeyFromStorage);
+        } else {
+            i18next.changeLanguage("en");
         }
-      })
-    }
+        if (langIndexFromStorage) setLangIndex(langIndexFromStorage);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-
-  }, [language])
-    */
     return (
         <div className={"language_dropdown"}>
             <div className={"language_dropdown_top"} >
                 <div className={"language_dropdown_top_img_div"} onClick={setOpenLanguageDropdown} data-name="language" >
                     <img src={getCurrentLanguageImage()} alt={langFlag} />
-
                 </div>
                 <span onClick={setOpenLanguageDropdown} className={"lang_text"} data-name="language">
                     {languagess[langIndex]?.innerText}
@@ -116,3 +122,19 @@ const LanguageSelector = () => {
 }
 
 export default LanguageSelector
+/*
+  useEffect(() => {
+if ((localStorage?.getItem("language"))) {
+  let langKey = JSON.parse(localStorage.getItem("language"))
+  appData?.languages.map((item, index) => {
+    let { value: key, } = item
+    if (langKey === key) {
+      setLangFlag(key)
+      setLangIndex(index)
+    }
+  })
+}
+
+
+}, [language])
+*/

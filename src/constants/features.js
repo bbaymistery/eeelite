@@ -4,20 +4,20 @@ import { FaShippingFast } from "react-icons/fa";
 export const features = [
     {
         id: 1,
-        heading: "Global Shipping",
-        subheading: "Dispatched from Turkey to global destinations.",
+        headingKey: "globalShipping",
+        subheadingKey: "globalShippingDescription",
         icon: <FaShippingFast />,
     },
     {
         id: 2,
-        heading: "Tailored for You",
-        subheading: "Custom-made to fit your specifications.",
+        headingKey: "tailoredFor",
+        subheadingKey: "tailoredForDescription",
         icon: <AiOutlineLike />,
     },
     {
         id: 3,
-        heading: "Superior grade.",
-        subheading: "Quality assurance for our esteemed customers.",
+        headingKey: "superiorGrade",
+        subheadingKey: "superiorGradeDescription",
         icon: <AiOutlineSafetyCertificate />,
     },
 ];

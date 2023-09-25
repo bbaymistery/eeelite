@@ -3,11 +3,14 @@ import "./Slider.scss";
 
 import { slideImages } from "../../constants/slideImages";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 const Slider = () => {
   const [index, setIndex] = useState(0);
   const [cars] = useState(slideImages);
   const [typewriterText, setTypewriterText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
+  const { t } = useTranslation(["homePageSlider"]);
+
   useEffect(() => {
     const lastIndex = cars.length - 1;
 
@@ -30,7 +33,7 @@ const Slider = () => {
     };
   }, [index, cars]);
 
-  const phrase = "Your Comfort, Our Craft";
+  const phrase = t("typeWriterText");
   useEffect(() => {
     const timeout = setTimeout(() => {
       // If it's not at the end of the phrase, continue typing
@@ -45,6 +48,7 @@ const Slider = () => {
     }, 200);  // Adjust the typing speed if necessary
 
     return () => clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typewriterText, charIndex]);
   return (
     <div className="slider_container">
@@ -65,15 +69,12 @@ const Slider = () => {
               {/* Slide content */}
               <div className="container_auto_center">
                 <div className="intro">
-                  <h1 className="intro_welcome">Welcome to EE Elite</h1>
+                  <h1 className="intro_welcome"> {t(`title`)}</h1>
                   <h2 className="intro_header">
-                    Discover Premium Products <br /> for Your Every Need
+                    {t(`subtitle`)}
                   </h2>
                   <p className="intro_desc">
-                    Elevate your lifestyle with our exclusive selection of high-quality products,
-                    meticulously curated to provide you with unmatched comfort and satisfaction.
-    
-         
+                    {t(`description`)}
                   </p>
                   <div className="login_register">
                     <a href="/products">

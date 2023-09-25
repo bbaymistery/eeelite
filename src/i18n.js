@@ -14,7 +14,7 @@ i18n
     },
     fallbackLng: "en", //if sth isnt choisen we set by default
     debug: false, //it allows u to look at all the languages an everything that is happening in the console for thew browser while u  r  working towards app  It is something should be disabled in production
-    ns: ["homePageSlider", "navbar", "general"],
+    ns: ["navbar", "homePageSlider", "shipping", "general"],
     //ns can have multiple namescapes,in case you want to divide a huge translation into smaller pieces and load them on demand
     interpolation: {
       escapeValue: false,

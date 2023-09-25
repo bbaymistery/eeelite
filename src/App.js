@@ -13,8 +13,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       dispatch({ type: "ALERT", payload: {} })
-    },250);
+      if (!localStorage?.getItem("languageKey")) {
+        localStorage?.setItem("languageKey", "en");
+        localStorage?.setItem("languageIndex", 0);
+      }
+    }, 250);
   }, [dispatch])
+  //if user close browser initialize localstorage
+
 
   return (
     <div className="App ">

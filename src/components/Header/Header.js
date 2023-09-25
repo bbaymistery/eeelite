@@ -5,24 +5,26 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import LanguageSelector from "../LanguageSelector/Index";
+import { useTranslation } from "react-i18next";
+
 export const headerLinks = [
   {
-    name: "Home",
+    name: "home",
     link: "/",
 
   },
   {
-    name: "About",
+    name: "about",
     link: "/aboutus",
   },
 
   {
-    name: "Products",
+    name: "products",
     link: "/products",
   },
 
   {
-    name: "Contact ",
+    name: "contact",
     link: "/contactus",
   },
 
@@ -30,7 +32,8 @@ export const headerLinks = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-
+  //arranging language
+  const { t } = useTranslation(["navbar"]);
   const changeValues = (linkName) => {
 
   };
@@ -44,16 +47,16 @@ const Header = () => {
           </Link>
           <div className="list">
             <ul>
-              {headerLinks.map((link) => {
+              {headerLinks.map((link, i) => {
                 return (
                   <Link to={link.link} key={link.name} className={""} onClick={() => changeValues(link.name)}   >
-                    {link.name}
+                    {t(`${link.name}`)}
                   </Link>
                 );
               })}
               <div className='contact_us_catalog_div_mobile'>
                 <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
-                  Catalog
+                  {t(`${"catalog"}`)}
                 </a >
               </div >
               <LanguageSelector />
@@ -67,21 +70,22 @@ const Header = () => {
                 return (
                   <li key={link.name}>
                     <Link to={link.link} onClick={() => changeValues(link.name)}>
-                      {link.name}
+                      {t(`${link.name}`)}
                     </Link>
                   </li>
                 );
               })}
               <li>
                 <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
-                  Catalog
+                  {t(`${"catalog"}`)}
+
                 </a>
               </li>
             </ul>
           </div>
           <div className="icons">
             {/* {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels", "Unmatched Softness"].map((link) => { */}
-            {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels",].map((link) => {
+            {[t(`${"luxury"}`), t(`${"premium"}`), t(`${"hotelGrade"}`),].map((link) => {
               return (
                 <div key={link}   >
                   <span> <BiSolidCheckboxChecked />  </span>
