@@ -2,7 +2,6 @@
 import "./carousel.scss";
 import React, { useEffect, useRef } from "react";
 import Card from "../Card";
-import useOnScreen from "../../hooks/useOnScreen/useOnScreen";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import productIamge1 from '../../images/products/10.jpg'
