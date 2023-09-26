@@ -93,7 +93,6 @@ const ProductCarousel = React.memo(() => {
 
   //!setting displaying with hook
   const headerTwoRef = useRef();
-  const visible = useOnScreen(headerTwoRef, "-150px");
 
   useEffect(() => { AOS.init({ duration: 1200, easing: "ease-in-sine" }); }, []);
   const { t } = useTranslation(["carousel"]);
