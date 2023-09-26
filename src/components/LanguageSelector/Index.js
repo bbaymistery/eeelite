@@ -92,7 +92,7 @@ const LanguageSelector = () => {
 
     return (
         <div className={"language_dropdown"}>
-            <div className={"language_dropdown_top"} >
+            <div  className={"language_dropdown_top"} >
                 <div className={"language_dropdown_top_img_div"} onClick={setOpenLanguageDropdown} data-name="language" >
                     <img src={getCurrentLanguageImage()} alt={langFlag} />
                 </div>

@@ -10,24 +10,24 @@
                 align-items: center;
                 justify-content: center;
                 border: 1px solid $border;
-                padding: 2px 8px;
 
                 .language_dropdown_top_img_div {
                     background-color: rgb(216 222 228 / 14%);
-                    padding: 0px 5px;
-display: flex;
-    justify-content: center;
-    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                padding: 2px 8px;
+                
                     img {
                         width: 20px;
                     }
                 }
 
                 span {
-                    margin-left: 10px;
+                    padding-left: 10px;
                     color: $dark-1;
                     font-family: $font-jost;
-
+                padding: 2px 8px;
                     i {
                         font-size: 11px;
                         margin-left: 10px;
@@ -46,8 +46,8 @@ display: flex;
                 .all_languages {
                     position: absolute;
                     background-color: white;
-                    top:45px;
-                    left: 0px;
+                top: 28px;
+                    left: -115px;
                     width: 100%;
                     display: flex;
                     width: 132PX;

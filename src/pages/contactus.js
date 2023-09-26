@@ -1,18 +1,23 @@
 import React from 'react'
 import "./contactus.scss";
-import elgunVisitcard from '../images/VisitCard/elgunVisitCardEN.png';
-import ElidaVisitcard from '../images/VisitCard/elidaVisitCardEN.png';
+import elgunVisitcardEn from '../images/VisitCard/elgunVisitCardEN.png';
+import ElidaVisitcardEn from '../images/VisitCard/elidaVisitCardEN.png';
+import elgunVisitcardTr from '../images/VisitCard/elgunVisitCardTR.png';
+import ElidaVisitcardTr from '../images/VisitCard/elidaVisitCardTR.png';
+import { useTranslation } from 'react-i18next';
 const ContactUs = () => {
+  const { t } = useTranslation(["contact"]);
+
   return (
     <div className={"contact_us"}>
       <div className='container'>
         <br />
         <h1 className='contact_us_title'>
-          We'd love to hear from you
-
+          {t("welcome")}
         </h1>
         <p className='contact_us_title_description'>
-          Send us a message and we'll respond as soon as possible
+          {t("subwelcome")}
+
         </p>
         <br />
 
@@ -20,32 +25,57 @@ const ContactUs = () => {
 
           <div>
             <a href="https://wa.me/994506330135?text=Interested%20in%20Working%20Together%3F" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp">
+              <i className="fa-brands fa-whatsapp">
               </i>
             </a>
 
 
-            <img src={elgunVisitcard} alt="Director - Elgun's Visit Card" />
+            {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
+              <img src={elgunVisitcardTr} alt="Director - Elgun's Visit Card" /> :
+              <img src={elgunVisitcardEn} alt="Director - Elgun's Visit Card" />
+            }
           </div>
           <div >
             <a href="https://wa.me/994773054363?text=Interested%20in%20Working%20Together%3F" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp"></i>
+              <i className="fa-brands fa-whatsapp"></i>
             </a>
-            <img src={ElidaVisitcard} alt="Sales Manager - Elida's Visit Card" />
+            {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
+              <img src={ElidaVisitcardTr} alt="Sales Manager - Elida's Visit Card" />
+              : <img src={ElidaVisitcardEn} alt="Sales Manager - Elida's Visit Card" />
+            }
+
           </div>
 
           <div className='contact_us_catalog_div_mobile'>
-            <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>Check out our Catalog
+            {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
+              <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
+                {t(`${"catalogCheck"}`)}
 
-            </a>
+              </a> :
+              <a href="/katalogEn.pdf" target='_blank' rel="noopener noreferrer">
+                {t(`${"catalogCheck"}`)}
+
+              </a>
+            }
           </div>
         </div>
 
         <div className='contact_us_catalog_div'>
-          <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>Check out our Catalog
+          <a className='contact_us_katalog_tag' href="/katalogTr.pdf" target='_blank'>
+            {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
+              <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
+                {t(`${"catalogCheck"}`)}
+
+              </a> :
+              <a href="/katalogEn.pdf" target='_blank' rel="noopener noreferrer">
+                {t(`${"catalogCheck"}`)}
+
+              </a>
+            }
+
 
           </a>
-     </div>
+        </div>
         <div>
         </div>
 

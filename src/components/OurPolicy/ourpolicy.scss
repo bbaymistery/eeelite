@@ -1,0 +1,68 @@
+  @import '../../styles/fonts';
+  @import '../../styles/variables';
+
+  .politikamiz_container[bggray="true"] {
+      background-color: $gray;
+  }
+
+  .politikamiz_container[bggray="false"] {
+      background-color: white !important;
+  }
+
+  .politikamiz_container {
+      padding-bottom: 6rem;
+      padding-top: 2rem;
+      border-top: 1px solid $border;
+
+      .politikamiz {
+          margin-top: 3rem;
+
+          .politikamiz_title {
+              font-size: 36px;
+              font-family: serif;
+              text-align: center;
+          }
+
+          .boxes {
+              display: flex;
+              gap: 2rem;
+              margin-top: 3rem;
+
+              @media(max-width:1100px) {
+                  flex-direction: column;
+              }
+
+              .box {
+                  border: 1px solid $border;
+                  padding: 2rem 1.5rem;
+                  background-color: white;
+
+                  &:hover {
+                      background-color: #d7d7d7;
+                      color: black;
+                      transition: .2s linear;
+
+                      .box_desc {
+                          font-weight: 500;
+                      }
+                  }
+
+                  .box_title {
+                      font-size: 20px;
+                      font-weight: 500;
+                      text-align: center;
+                      margin-bottom: 1rem;
+                  }
+
+                  .box_desc {
+                      font-size: 18px;
+                      font-family: $font-sanspro;
+                      text-align: center;
+                      font-weight: 500;
+                      color: rgb(0, 0, 0);
+
+                  }
+              }
+          }
+      }
+  }

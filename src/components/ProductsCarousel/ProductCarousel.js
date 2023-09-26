@@ -15,6 +15,7 @@ import productIamge7 from '../../images/products/5.jpg'
 import productIamge8 from '../../images/products/6.jpg'
 import productIamge9 from '../../images/products/bornoz.jpg'
 import productIamge10 from '../../images/products/mehraba.jpg'
+import { useTranslation } from "react-i18next";
 const allProducts = [
   {
     id: 8,
@@ -95,14 +96,15 @@ const ProductCarousel = React.memo(() => {
   const visible = useOnScreen(headerTwoRef, "-150px");
 
   useEffect(() => { AOS.init({ duration: 1200, easing: "ease-in-sine" }); }, []);
-
+  const { t } = useTranslation(["carousel"]);
 
 
   return (
     <div className="container product_carousel">
-      <h3 className="title" ref={headerTwoRef} data-aos="zoom-in">
-        {visible && "Some of our products"}
-      </h3>
+      { <h3 className="title" ref={headerTwoRef} data-aos="zoom-in">
+        {t(`title`)}
+      </h3>}
+
       <div className="carousel_list">
         <div className="slider">
           <div className="slider_track">

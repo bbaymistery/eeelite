@@ -1,7 +1,7 @@
 @import '../../styles/breakpoint';
 
 .slider_container {
-    height: 835px;
+    height: 935px;
     width: 100%;
     // border: 1px solid red;
     overflow: hidden;
@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 6rem;
 
     @include breakpoint-down(medium) {
         height: 650px;
@@ -54,7 +55,18 @@
 
 
             }
-
+        &::before {
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            content: '';
+            z-index: 0;
+        }
             .container_auto_center {
 
                 max-width: 1452px;
@@ -64,18 +76,7 @@
                     text-align: center;
                 }
 
-                &::after {
-                    background-color: rgba(0, 0, 0, 0.4);
-                    height: 100%;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    content: '';
-                    z-index: 0;
-                }
+            
 
                 .intro {
                     position: absolute;
@@ -86,7 +87,8 @@
                     margin-left: 50px;
                     font-weight: bold;
                     z-index: 999;
-user-select: none;
+                    user-select: none;
+
                     @include breakpoint-down(medium) {
                         margin-top: 180px;
                         width: 65%;
@@ -160,11 +162,12 @@ user-select: none;
                             margin: 2rem 0rem;
 
                         }
-                        a{
-                                    font-weight: bold;
-                                    font-size: 20px;
-                                    text-decoration: underline;
-                             background-color: red;
+
+                        a {
+                            font-weight: bold;
+                            font-size: 20px;
+                            text-decoration: underline;
+                            background-color: red;
                         }
                     }
 

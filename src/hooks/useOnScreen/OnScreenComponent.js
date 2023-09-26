@@ -4,7 +4,6 @@ import useOnScreen from "./useOnScreen";
 export default function OnScreenComponentComponent() {
   const headerTwoRef = useRef();
   const visible = useOnScreen(headerTwoRef, "-100px");
-  console.log(headerTwoRef);
   //js de kullandigimiz observer fonksyonun eynisdi
   //! the aim is we r checking is this text on the screen ? if yes then run that or this code
   return (

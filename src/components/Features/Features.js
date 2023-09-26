@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 const Features = () => {
   const { t } = useTranslation(["shipping"]);  // <-- Use the hook here
 
-  useEffect(() => { AOS.init({ duration: 1200, easing: "ease-in-sine", delay: 150 }); }, []);
+  useEffect(() => { AOS.init({ duration: 500, easing: "ease-in-sine", delay: 10 }); }, []);
 
   return (
     <div className="features_wrapper" >

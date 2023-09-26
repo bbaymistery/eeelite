@@ -48,5 +48,8 @@
   },
   "volta": {
     "node": "16.20.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
