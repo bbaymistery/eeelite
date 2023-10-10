@@ -4,7 +4,6 @@ import Loading from './Loading'
 
 const Alert = () => {
     const alert = useSelector((state) => state.alertReducer)
-
     return (
         <div>
             {alert.loading && <Loading />}

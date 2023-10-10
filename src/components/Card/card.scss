@@ -3,13 +3,15 @@
 .card {
     border: 1px solid var(--border-gray);
     border-radius: 20px;
-    min-height: 302px;
     position: relative;
     transition: .5s ease-in-out;
+    width: 264px;
+border: 2px solid rgb(201, 201, 201);
+
+@media(max-width:768px) {
+border: 2px solid rgb(201, 201, 201);
     width: 244px;
-
-
-
+    }
     .img_div {
         background-color: rgba(211, 211, 211, 0.208);
         border-top-left-radius: 10px;
@@ -17,7 +19,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 340px;
+        height: 300px;
 
         img {
             border-radius: 15px;
@@ -27,8 +29,6 @@
         }
 
         .card-body {
-            color: #000;
-            font-size: 16px;
             font-weight: 700;
             padding: 22px 21px;
             position: absolute;
@@ -61,7 +61,7 @@
             p {
                 font-weight: normal;
                 text-align: center;
-                font-size: 18px;
+                font-size: 15px;
             }
         }
     }

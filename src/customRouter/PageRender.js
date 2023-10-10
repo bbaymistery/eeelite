@@ -6,9 +6,12 @@ const generatePage = (pageName) => {
     //pages icinde register login falan var
     //ona gore .. seklinde yazdik
     const component = () => require(`../pages/${pageName}`).default
+    console.log(component);
+
     try {
         return React.createElement(component())
     } catch (err) {
+
         return <NotFound />
     }
 }
@@ -28,7 +31,7 @@ const PageRender = () => {
     }
 
 
- 
+
     return generatePage(pageName)
 
 }

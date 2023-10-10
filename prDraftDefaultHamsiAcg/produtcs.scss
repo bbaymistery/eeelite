@@ -1,0 +1,103 @@
+@import '../styles/breakpoint';
+@import '../styles/variables';
+@import '../styles/_fonts';
+
+.products {
+    margin: 0 var(--window-margin);
+    padding: 4rem 0rem;
+    padding-top: 8rem;
+
+    .container {
+
+        h1 {
+            margin-bottom: 2rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            font-family: serif;
+        }
+
+        .products_column {
+            display: flex;
+
+
+            .left_products_column {
+                padding: 15px;
+                width: 75%;
+
+                .left_products_column_content {}
+            }
+
+            .right_products_column {
+                padding: 15px;
+                width: 25%;
+
+                .right_products_column_content {
+                    border-radius: 4px;
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 160px;
+                    border: 1px solid $border;
+                    padding-top: 10px;
+
+                    .ul_main {
+
+                        .li_main {
+                            .li_main_div {
+                                display: flex;
+                                cursor: pointer;
+                                background: $gray2;
+                                padding: 5px 25px;
+                                justify-content: space-between;
+
+                                .li_main_div_text {
+                                    font-size: 20px;
+                                }
+
+                                .li_main_div_icon {
+                                    i {
+                                        font-size: 15px;
+                                        transition: transform 0.2s ease;
+                                        /* Add transition for icon rotation */
+                                    }
+                                }
+                            }
+
+                            .ul_sub_content {
+                                max-height: 0;
+                                overflow: hidden;
+                                padding: 5px 25px;
+                                transition: max-height 0.4s ease, padding 0.2s ease;
+
+                                /* Add transition for height change */
+                         
+
+                                .li_sub_content {
+                                    font-size: 18px;
+                                    margin-left: 10px;
+                                    padding-left: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    transition: 0.2s linear;
+                                    font-weight: 500;
+                                    padding: 5px 0px;
+color: #3c404c;
+                                    &:hover {
+                                        margin-left: 22px;
+                                        cursor: pointer;
+                                        color: black;
+                                    }
+
+                                    span {
+                                        margin-right: 5px;
+                                        font-weight: 500;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
