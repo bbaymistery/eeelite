@@ -5,7 +5,8 @@
 .about {
     margin: 0 var(--window-margin);
     padding: 4rem 0rem;
-    padding-top: 8rem;
+    padding-top:10rem;
+    padding-bottom: 0px;
 
     .container {
         h1 {
@@ -15,6 +16,7 @@
         }
 
         .info {
+            padding-bottom: 3rem;
             p {
                 font-size: 21px;
                 padding-bottom: 1rem;

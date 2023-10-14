@@ -1,5 +1,5 @@
 export const categories = [
-   
+
     {
         name: 'spahavlulari',
         subItems: [],
@@ -17,6 +17,10 @@ export const categories = [
         subItems: [],
     },
     {
+        name: 'restoranahavlulari',
+        subItems: [],
+    },
+    {
         name: 'sporfitnesshavlulari',
         subItems: [],
     },
@@ -27,9 +31,5 @@ export const categories = [
     {
         name: 'bornozlar',
         subItems: ['otelbornozlari', 'spabornozlari', 'hamambornozlari', 'ozeltasarim'],
-    },
-    {
-        name: 'restoranahavlulari',
-        subItems: ["restoranaozeltasarim", "personelhavlulari"],
     },
 ];

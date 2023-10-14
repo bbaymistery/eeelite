@@ -28,14 +28,13 @@ const languagess = [
 
     }
 ]
-const LanguageSelector = () => {
+const LanguageSelector = ({ mobile = false, }) => {
 
 
     const languagesDivRef = useRef(null)
     const [langFlag, setLangFlag] = useState(localStorage?.getItem("languageKey") || "en");
     const [langIndex, setLangIndex] = useState(localStorage?.getItem("languageIndex") || 0);
     const { i18n } = useTranslation(["navbar"]);
-
     const outsideClickDropDown = (e) => {
         languagesDivRef.current.style.opacity = 0
         languagesDivRef.current.style.visibility = 'hidden'
@@ -90,14 +89,17 @@ const LanguageSelector = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+
+
     return (
-        <div className={"language_dropdown"}>
-            <div  className={"language_dropdown_top"} >
+        <div className={`language_dropdown ${!mobile ? "language_dropdown_mobile" : ""}`} style={{ display: mobile ? "none" : "block" }}>
+            <div className={"language_dropdown_top"} >
                 <div className={"language_dropdown_top_img_div"} onClick={setOpenLanguageDropdown} data-name="language" >
                     <img src={getCurrentLanguageImage()} alt={langFlag} />
                 </div>
                 <span onClick={setOpenLanguageDropdown} className={"lang_text"} data-name="language">
                     {languagess[langIndex]?.innerText}
+                    {/* {mobile ? <i className="fa-solid fa-chevron-right"></i> : <i className="fa-solid fa-angle-down"></i>} */}
                     <i className="fa-solid fa-angle-down"></i>
                 </span>
                 <OutsideClickAlert onOutsideClick={outsideClickDropDown}>

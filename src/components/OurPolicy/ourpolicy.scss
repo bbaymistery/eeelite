@@ -10,8 +10,8 @@
   }
 
   .politikamiz_container {
-      padding-bottom: 6rem;
-      padding-top: 2rem;
+      padding-bottom: 5rem;
+      padding-top:1rem;
       border-top: 1px solid $border;
 
       .politikamiz {
@@ -35,8 +35,8 @@
               .box {
                   border: 1px solid $border;
                   padding: 2rem 1.5rem;
-                  background-color: white;
-
+                  background-color: rgb(255, 255, 255);
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
                   &:hover {
                       background-color: #d7d7d7;
                       color: black;

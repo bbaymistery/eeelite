@@ -7,7 +7,7 @@ import { categories } from '../constants/categories';
 
 import Card from '../components/Card';
 import Pagination from '../components/Pagination';
-import { plajHavlulari, spaHavlulari } from '../constants/havlular';
+import { kuaforHavlulari, manikurHavlulari, plajHavlulari, restoranHavlulari, spaHavlulari } from '../constants/havlular';
 import Accordion from '../components/Accordion/Accordion';
 
 
@@ -88,7 +88,28 @@ const Products = () => {
             allProducts = plajHavlulari
         }
 
+        if (openIndex === 2) {
+            setDescriptionName("descriptionKuaforHavlusu")
+            settotalPages(Math.ceil(kuaforHavlulari.length / productsPerPage))
+            setcontentOfAccordionName("contentAccordionKuafHavlusu")
+            allProducts = kuaforHavlulari
+        }
 
+        if(openIndex===3){
+            setDescriptionName("descriptionManikur")
+            setcontentOfAccordionName("contentAccordionManikur")
+            settotalPages(Math.ceil(manikurHavlulari.length / productsPerPage))
+            allProducts = manikurHavlulari
+
+        }
+
+        if (openIndex === 4) {
+            setDescriptionName("descriptionRestoran")
+            setcontentOfAccordionName("contentAccordionRestoran")
+            settotalPages(Math.ceil(restoranHavlulari.length / productsPerPage))
+            allProducts = restoranHavlulari
+        }
+        //
         // Calculate the start and end indexes for the current page
         const startIndex = (currentPage - 1) * productsPerPage;
         const endIndex = startIndex + productsPerPage;
@@ -129,7 +150,7 @@ const Products = () => {
                 <div className="products_column">
                     <div className="left_products_column">
                         <div className='cards'>
-                   
+
                             {currentProducts.map((product) => (
                                 <Card key={product.id} pr={product} translationhook="productsCategories" descriptionProduct={descriptionName} />
                             ))}

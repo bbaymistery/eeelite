@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import LanguageSelector from "../LanguageSelector/Index";
 import { useTranslation } from "react-i18next";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const headerLinks = [
   {
@@ -35,9 +36,10 @@ const Header = () => {
   //arranging language
   const { t } = useTranslation(["navbar"]);
   const changeValues = (linkName) => {
-
+    setMobileMenuOpen(!mobileMenuOpen)
   };
-
+  let size = useWindowSize();
+  let { width } = size
   return (
     <div>
       <div className="wrapper_header">
@@ -73,17 +75,20 @@ const Header = () => {
             </div>
             {/* Mobile Menu */}
             <div className={`mobile_menu ${mobileMenuOpen ? "open" : ""}`}>
+
               <ul>
-                {headerLinks.map((link) => {
+                {headerLinks.map((link,index) => {
+                  const animationDelay = `${0.2 * (index + 1)}s`;
+
                   return (
-                    <li key={link.name}>
+                    <li style={{animationDelay}} key={link.name} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
                       <Link to={link.link} onClick={() => changeValues(link.name)}>
                         {t(`${link.name}`)}
                       </Link>
                     </li>
                   );
                 })}
-                <li>
+                <li style={{ animationDelay:"1s" }} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
                   {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
                     <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
                       {t(`${"catalog"}`)}
@@ -96,9 +101,13 @@ const Header = () => {
                   }
 
                 </li>
+
+
+
               </ul>
             </div>
             <div className="icons">
+
               {/* {["Luxury Linens", "Premium Quality", "Hotel-Grade Towels", "Unmatched Softness"].map((link) => { */}
               {[t(`${"luxury"}`), t(`${"premium"}`), t(`${"hotelGrade"}`),].map((link) => {
                 return (
@@ -109,8 +118,14 @@ const Header = () => {
                 );
               })}
             </div>
-            <div className="hamburger_menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <GiHamburgerMenu className="icon" style={{ cursor: "pointer" }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center",gap:"1rem" }}>
+              <li style={{ listStyle: "none" }}>
+                <LanguageSelector mobile={width < 671 ? false : true} mobileMenuOpen={mobileMenuOpen} />
+              </li>
+              <div className="hamburger_menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+
+                <GiHamburgerMenu className="icon" style={{ cursor: "pointer" }} />
+              </div>
             </div>
           </div>
         </div>
