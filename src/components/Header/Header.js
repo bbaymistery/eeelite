@@ -33,13 +33,17 @@ export const headerLinks = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  let size = useWindowSize();
+  let { width } = size
   //arranging language
   const { t } = useTranslation(["navbar"]);
   const changeValues = (linkName) => {
-    setMobileMenuOpen(!mobileMenuOpen)
+    if (width < 990) {
+      setMobileMenuOpen(!mobileMenuOpen)
+    }
   };
-  let size = useWindowSize();
-  let { width } = size
+  console.log(width);
+
   return (
     <div>
       <div className="wrapper_header">
@@ -77,18 +81,18 @@ const Header = () => {
             <div className={`mobile_menu ${mobileMenuOpen ? "open" : ""}`}>
 
               <ul>
-                {headerLinks.map((link,index) => {
+                {headerLinks.map((link, index) => {
                   const animationDelay = `${0.2 * (index + 1)}s`;
 
                   return (
-                    <li style={{animationDelay}} key={link.name} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
+                    <li style={{ animationDelay }} key={link.name} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
                       <Link to={link.link} onClick={() => changeValues(link.name)}>
                         {t(`${link.name}`)}
                       </Link>
                     </li>
                   );
                 })}
-                <li style={{ animationDelay:"1s" }} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
+                <li style={{ animationDelay: "1s" }} className={`${mobileMenuOpen ? "bottom_to_top_animation2" : ""}`}>
                   {localStorage.getItem("languageKey") && localStorage.getItem("languageKey") === "tr" ?
                     <a href="/katalogTr.pdf" target='_blank' rel="noopener noreferrer">
                       {t(`${"catalog"}`)}
@@ -118,7 +122,7 @@ const Header = () => {
                 );
               })}
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center",gap:"1rem" }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center", gap: "1rem" }}>
               <li style={{ listStyle: "none" }}>
                 <LanguageSelector mobile={width < 671 ? false : true} mobileMenuOpen={mobileMenuOpen} />
               </li>

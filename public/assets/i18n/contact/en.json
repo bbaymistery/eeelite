@@ -1,5 +1,11 @@
 {
     "welcome": "We Would Love To Hear From You",
     "subwelcome": "Send us a message and we'll respond as soon as possible",
-    "catalogCheck":"Check out our Catalog"
+    "catalogCheck": "Check out our Catalog",
+    "contact": "Contact Us",
+    "contact724": "7/24 Contact ",
+    "abroad": "From Abroad",
+    "accountDepartment": "Account Department",
+    "director": "Director",
+    "email": "Email"
 }

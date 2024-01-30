@@ -34,6 +34,7 @@ const LanguageSelector = ({ mobile = false, }) => {
     const languagesDivRef = useRef(null)
     const [langFlag, setLangFlag] = useState(localStorage?.getItem("languageKey") || "en");
     const [langIndex, setLangIndex] = useState(localStorage?.getItem("languageIndex") || 0);
+    const [visibilityDropIcon, setVisibilityDropIcon] = useState(false)
     const { i18n } = useTranslation(["navbar"]);
     const outsideClickDropDown = (e) => {
         languagesDivRef.current.style.opacity = 0
@@ -50,6 +51,7 @@ const LanguageSelector = ({ mobile = false, }) => {
         //make hidden language dropdown in mobile menu After clicking
         languagesDivRef.current.style.opacity = 0
         languagesDivRef.current.style.visibility = 'hidden'
+        setVisibilityDropIcon(false)
 
     }
     //when we click lang text it opens dropdown
@@ -58,18 +60,25 @@ const LanguageSelector = ({ mobile = false, }) => {
         if (languagesDivRef.current.style.opacity === "1") {
             languagesDivRef.current.style.opacity = "0";
             languagesDivRef.current.style.visibility = 'hidden';
+            setVisibilityDropIcon(false)
 
             // Remove 'no-pointer' class
             const elements = document.querySelectorAll('[data-name="language"]');
             elements.forEach(el => el.classList.remove('no-pointer'));
+            console.log("sdad");
+
         } else {
             languagesDivRef.current.style.opacity = "1";
             languagesDivRef.current.style.visibility = 'visible';
+            setVisibilityDropIcon(true)
 
             // Add 'no-pointer' class
             const elements = document.querySelectorAll('[data-name="language"]');
             elements.forEach(el => el.classList.add('no-pointer'));
         }
+
+
+
     }
     const getCurrentLanguageImage = () => {
         const language = languagess.find(lang => lang.value === langFlag);
@@ -100,8 +109,12 @@ const LanguageSelector = ({ mobile = false, }) => {
                 <span onClick={setOpenLanguageDropdown} className={"lang_text"} data-name="language">
                     {languagess[langIndex]?.innerText}
                     {/* {mobile ? <i className="fa-solid fa-chevron-right"></i> : <i className="fa-solid fa-angle-down"></i>} */}
-                    <i className="fa-solid fa-angle-down"></i>
+
+
+                    {!visibilityDropIcon ? <i className="fa-solid fa-angle-down"></i> : <i className="fa-solid fa-angle-up"></i>}
                 </span>
+
+
                 <OutsideClickAlert onOutsideClick={outsideClickDropDown}>
                     <div ref={languagesDivRef} className={"all_languages"} style={{ opacity: "0", visibility: "hidden" }} >
                         {languagess.map((item, index) => {

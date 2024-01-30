@@ -38,6 +38,15 @@
                 }
 
                 .lang_text {
+                    position: relative;
+                    padding-right: 18px;
+
+                    i {
+                        position: absolute;
+                        top: 10px;
+                        z-index: -1;
+                    }
+
                     @media(max-width:1200px) {
                         display: none;
                     }
@@ -120,16 +129,18 @@
 
                 .lang_text {
                     padding-left: 0px;
-@media(max-width:671px) {
-font-size: 16px;
-    }
+
+                    @media(max-width:671px) {
+                        font-size: 16px;
+                    }
+
                     @media(max-width:671px) {
                         display: block !important;
                     }
                 }
 
                 .all_languages {
-                left: -119px;
+                    left: -119px;
                     top: 23px;
                 }
             }

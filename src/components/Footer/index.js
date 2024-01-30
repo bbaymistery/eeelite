@@ -43,7 +43,7 @@ const Footer = () => {
             });
         }, options);
 
-        // Start observing the footer
+        //! Start observing the footer
         if (footerElement) {
             observer.observe(footerElement);
         }
@@ -91,7 +91,7 @@ const Footer = () => {
                     </h1>
                     <a className='hizmet' href="tel:+447365678714">+44  73 656 78714</a>
                     <a className='hizmet' href="tel:+994506330135">+994 50 633 0135</a>
-                    <a className='hizmet' href="tel:+994773054363">+994 77 305 4363</a>
+                    <a className='hizmet' href="tel:+994993054363">+994 99 305 4363</a>
 
                     <a className='hizmet' href="mailto:eeeliteinfo@gmail.com">eeeliteinfo@gmail.com</a>
 

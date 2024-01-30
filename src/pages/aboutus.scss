@@ -5,8 +5,10 @@
 .about {
     margin: 0 var(--window-margin);
     padding: 4rem 0rem;
-    padding-top:10rem;
+    padding-top: 10rem;
     padding-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
 
     .container {
         h1 {
@@ -17,6 +19,7 @@
 
         .info {
             padding-bottom: 3rem;
+
             p {
                 font-size: 21px;
                 padding-bottom: 1rem;
